@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle in Africa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+        }
+        #scrollingText {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-bottom: 20px;
+        }
+        #imageContainer {
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+        #displayedImage {
+            width: 100%;
+            height: 100%;
+        }
+        .radio-container {
+            margin-top: 10px;
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body onload="startScrolling();">
+
+    <div id="scrollingText">Jungle in Africa</div>
+    <div id="imageContainer">
+        <img id="displayedImage" src="photo.jpg" alt="Image Display">
+    </div>
+    
+    <div class="radio-container">
+        <label>
+            <input type="radio" name="imageToggle" onclick="showImage('images/mypic.jpg')" checked>
+            Photo of yourself
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="imageToggle" onclick="showImage('images/tiger.jpg')">
+            Tiger
+        </label>
+    </div>
+
+    <script>
+        // Scrolling text
+        var msg = " Jungle in Africa ";
+        
+        function scrollMsg() {
+            msg = msg.substring(1) + msg.charAt(0);
+            document.getElementById("scrollingText").innerText = msg;
+        }
+
+        function startScrolling() {
+            setInterval(scrollMsg, 200);
+        }
+
+        function showImage(image) {
+            document.getElementById("displayedImage").src = image;
+        }
+    </script>
+</body>
+</html>

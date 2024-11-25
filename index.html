@@ -3,73 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jungle in Africa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 20px;
-        }
-        #scrollingText {
-            font-size: 24px;
-            font-weight: bold;
-            color: red;
-            overflow: hidden;
-            white-space: nowrap;
-            margin-bottom: 20px;
-        }
-        #imageContainer {
-            width: 300px;
-            height: 200px;
-            margin: 20px auto;
-            border: 1px solid #ccc;
-        }
-        #displayedImage {
-            width: 100%;
-            height: 100%;
-        }
-        .radio-container {
-            margin-top: 10px;
-            text-align: left;
-            display: inline-block;
-        }
-    </style>
+    <title>EdTech in Myanmar</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body onload="startScrolling();">
-
-    <div id="scrollingText">Jungle in Africa</div>
-    <div id="imageContainer">
-        <img id="displayedImage" src="images/mypic.jpg" alt="Image Display">
-    </div>
+<body>
+    <header>
+        <h1>EdTech in Myanmar</h1>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="edtech-helps.html">How EdTech Helps</a></li>
+                <li><a href="success-stories.html">Success Stories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
-    <div class="radio-container">
-        <label>
-            <input type="radio" name="imageToggle" onclick="showImage('images/mypic.jpg')" checked>
-            Photo of yourself
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="imageToggle" onclick="showImage('images/tiger.jpg')">
-            Tiger
-        </label>
-    </div>
+    <main>
+        <section>
+            <h2>What is EdTech?</h2>
+            <p>EdTech, or Educational Technology, refers to the use of technology to enhance learning and teaching. It includes tools like online platforms, mobile apps, and software that improve access to education.</p>
+        </section>
 
-    <script>
-        // Scrolling text
-        var msg = " Jungle in Africa ";
-        
-        function scrollMsg() {
-            msg = msg.substring(1) + msg.charAt(0);
-            document.getElementById("scrollingText").innerText = msg;
-        }
+        <section>
+            <h2>The Impact of EdTech in Myanmar</h2>
+            <p>During the COVID-19 pandemic and the military coup, traditional schooling faced significant disruptions. EdTech emerged as a lifeline, enabling remote learning and providing access to vital resources for students and teachers alike. It continues to play a crucial role in bridging educational gaps across the country.</p>
+        </section>
 
-        function startScrolling() {
-            setInterval(scrollMsg, 200);
-        }
+        <section>
+            <h2>Top 5 EdTech Startups in Myanmar</h2>
+            <p>Explore the leading EdTech companies driving educational innovation in Myanmar. Click on the buttons to learn more about each startup.</p>
+            <div id="startup-list">
+                <ul>
+                    <li>
+                        <strong>SAYA:</strong> A mobile-based platform for English learning.
+                        <button onclick="changeIframeSrc('https://www.saya.education/')">Visit</button>
+                    </li>
+                    <li>
+                        <strong>Waso Learn:</strong> Focuses on early childhood education.
+                        <button onclick="changeIframeSrc('https://wasolearn.com/')">Visit</button>
+                    </li>
+                    <li>
+                        <strong>L2E Myanmar:</strong> Online courses and certifications.
+                        <button onclick="changeIframeSrc('https://l2emyanmar.com/')">Visit</button>
+                    </li>
+                    <li>
+                        <strong>ISM</strong> Professional courses in programming and marketing.
+                        <button onclick="changeIframeSrc('https://www.ismyanmar.com/')">Visit</button>
+                    </li>
+                    <li>
+                        <strong>Japan Ready Functions Training School:</strong> Japanese language training online.
+                        <button onclick="changeIframeSrc('https://japanreadyschool.com/')">Visit</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="iframe-container">
+                <iframe id="startup-iframe" src="" frameborder="0" title="Startup Info"></iframe>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 EdTech in Myanmar</p>
+    </footer>
 
-        function showImage(image) {
-            document.getElementById("displayedImage").src = image;
-        }
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

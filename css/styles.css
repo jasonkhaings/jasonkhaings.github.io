@@ -83,6 +83,12 @@ section p, section ul {
     line-height: 1.8;
 }
 
+section img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
 section h2 {
     color: #2575fc;
     font-size: 1.8rem;
